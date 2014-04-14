@@ -16,10 +16,10 @@ for (( i=2; i<=max_cluster_size; i++ )) ; {
     sleep 1
 
 
-#    if [ $((i % 10)) == 0 ]
-#        then
-#           sleep 1
-#    fi
+    if [ $((i % 100)) == 0 ]
+        then
+           sleep 5
+    fi
 
 
 }
