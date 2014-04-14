@@ -14,9 +14,6 @@ for (( i=1; i<=max_cluster_size; i++ )) ; {
 #           sleep 1
 #    fi
 
-    if [ $((i % 100)) == 0 ]
-        then
-           sleep 10
-    fi
+     sleep 1
 }
 
