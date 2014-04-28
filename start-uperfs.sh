@@ -21,7 +21,7 @@ echo "Starting UPerfs $from - $to"
 
 
 for (( i=$from; i<=$to; i++ )) ; {
-    echo "starting box${i}"
+    echo "starting UPerf on box${i}"
     ./start-uperf.sh box${i} &
 
     sleep 1
