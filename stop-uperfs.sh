@@ -20,6 +20,6 @@ echo "Stopping UPerfs $from - $to"
 
 for (( i=$from; i<=$to; i++ )) ; {
     echo "Stopping box${i}"
-#    gcutil ssh box${i} "killall java" &
+    gcutil ssh box${i} "killall java" &
 }
 
