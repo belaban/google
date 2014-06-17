@@ -24,12 +24,12 @@ for (( i=$from; i<=$to; i++ )) ; {
     echo "starting UPerf on box${i}"
     ./start-uperf.sh box${i} &
 
-    sleep 1
+#    sleep 1
 
 
     if [ $((i % 100)) == 0 ]
         then
-           sleep 5
+           sleep 30
     fi
 
 

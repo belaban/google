@@ -19,11 +19,11 @@ echo "Stopping instances $from - $to"
 for (( i=$from; i<=$to; i++ )) ; {
     echo "stopping box${i}"
     ./stop-instance.sh box${i} &
-    sleep 1
+#    sleep 1
 
     if [ $((i % 100)) == 0 ]
         then
-           sleep 5
+           sleep 30
     fi
 }
 

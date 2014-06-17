@@ -21,9 +21,9 @@ for (( i=$from; i<=$to; i++ )) ; {
 
     if [ $((i % 100)) == 0 ]
         then
-           sleep 5
+           sleep 30
     fi
 
-     sleep 1
+#     sleep 1
 }
 
