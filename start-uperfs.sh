@@ -22,7 +22,7 @@ echo "Starting UPerfs $from - $to"
 
 for (( i=$from; i<=$to; i++ )) ; {
     echo "starting UPerf on box${i}"
-    ./start-uperf.sh box${i} &
+    ./start-uperf.sh box${i} ${i} &
 
 #    sleep 1
 
