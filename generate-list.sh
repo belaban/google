@@ -12,4 +12,4 @@ fi
 num_nodes=$1
 
 # gcutil listinstances |grep RUNNING | awk -f generate.awk
-cat dump.txt |grep RUNNING | awk -f generate.awk -v num_nodes=${num_nodes}
+gcutil listinstances |grep RUNNING | awk -f generate.awk -v num_nodes=${num_nodes}
