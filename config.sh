@@ -1,5 +1,7 @@
+#!/bin/bash
 
-
+# The prefix for all instances, Will be suffixed with an int, e.g. box1, box2 etc
+prefix="m"
 
 machine_type=n1-highcpu-4
 #machine_type=n1-standard-1

@@ -19,8 +19,8 @@ echo "Stopping UPerfs $from - $to"
 
 
 for (( i=$from; i<=$to; i++ )) ; {
-    echo "Stopping UPerf on box${i}"
-    gcutil ssh box${i} "killall java" &
+    echo "Stopping UPerf on ${prefix}${i}"
+    gcutil ssh ${prefix}${i} "killall java" &
 #    sleep 1
 
     if [ $((i % 100)) == 0 ]

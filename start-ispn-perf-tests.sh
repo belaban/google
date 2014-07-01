@@ -19,19 +19,13 @@ to=$2
 
 echo "Starting IspnPerfTests $from - $to"
 
-
 for (( i=$from; i<=$to; i++ )) ; {
-    echo "starting IspnPerfTest on box${i}"
-    ./start-ispn-perf-test.sh box${i} ${i} &
-
-#    sleep 1
-
+    echo "starting IspnPerfTest on ${prefix}${i}"
+    ./start-ispn-perf-test.sh ${prefix}${i} ${i} &
 
     if [ $((i % 100)) == 0 ]
         then
            sleep 30
     fi
-
-
 }
 

@@ -16,8 +16,8 @@ echo "Starting instances $from - $to"
 
 
 for (( i=$from; i<=$to; i++ )) ; {
-    echo "starting box${i}"
-    ./start-instance.sh box${i} &
+    echo "starting ${prefix}${i}"
+    ./start-instance.sh ${prefix}${i} &
 
     if [ $((i % 100)) == 0 ]
         then
