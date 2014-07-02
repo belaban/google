@@ -9,21 +9,22 @@ source config.sh
 
 ## Start the first instance manually !
 
-if [ $# -ne 3 ]; 
-    then echo "start-uperfs <from> <to> <number of nodes per instance>"
+if [ $# -ne 4 ];
+    then echo "start-uperfs <from> <to> <start-port> <number of nodes per instance>"
     exit -1
 fi
 
 from=$1
 to=$2
-num_nodes=$3
+bind_port=$3
+num_nodes=$4
 
 echo "Starting UPerfs $from - $to"
 
 
 for (( i=$from; i<=$to; i++ )) ; {
     echo "starting UPerf on ${prefix}${i}"
-    ./start-uperf.sh ${i} ${num_nodes} &
+    ./start-uperf.sh ${i} ${bind_port} ${num_nodes} &
 
     if [ $((i % 100)) == 0 ]
         then
