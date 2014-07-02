@@ -23,7 +23,5 @@ for (( i=$from; i<=$to; i++ )) ; {
         then
            sleep 30
     fi
-
-#     sleep 1
 }
 

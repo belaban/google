@@ -14,15 +14,14 @@ fi
 
 from=$1
 to=$2
+ssh_args="--log_level=WARNING --ssh_arg=-x --ssh_arg=-oLogLevel=quiet"
 
 echo "Stopping UPerfs $from - $to"
 
 
 for (( i=$from; i<=$to; i++ )) ; {
     echo "Stopping UPerf on ${prefix}${i}"
-    gcutil ssh ${prefix}${i} "killall java" &
-#    sleep 1
-
+    gcutil ssh ${ssh_args} ${prefix}${i} "killall java" &
     if [ $((i % 100)) == 0 ]
         then
            sleep 30

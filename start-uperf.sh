@@ -13,10 +13,8 @@ machine=${prefix}${instance_id}
 bind_port=$2
 num_nodes=$3
 props=http://storage.googleapis.com/jgroups-bucket/google.xml
-
-#echo "starting ${prefix}${instance_id}, num-nodes=${num_nodes}"
-
-command="gcutil ssh ${machine} "
+ssh_args="--log_level=WARNING --ssh_arg=-x --ssh_arg=-oLogLevel=quiet"
+command="gcutil ssh ${ssh_args} ${machine} "
 
 for (( i=1; i<= ${num_nodes}; i++ )) ; {
     node_name=${machine}.${i}
@@ -27,8 +25,5 @@ for (( i=1; i<= ${num_nodes}; i++ )) ; {
     command="${command} ${cmd}"
 }
 
-#echo "command: ${command}"
 
 ${command}
-
-#gcutil ssh ${name} "nohup uperf.sh -props $props -name ${name} -uuid ${uuid} -nohup > /dev/null 2> /dev/null < /dev/null &"

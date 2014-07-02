@@ -6,9 +6,11 @@
 
 
 BEGIN {
-    port=7800; uuid=0;
+    uuid=0;
     if(length(num_nodes) == 0)
-        num_nodes=1
+        num_nodes=1;
+    if(length(bind_port) == 0)
+        bind_port=7800;
     is_coord=1;
 }
 
@@ -19,7 +21,7 @@ BEGIN {
     for(i=1; i <= num_nodes; i++) {
         logical_name=$2 "." i
         tmp_uuid=uuid * num_nodes - num_nodes +i;
-        print(logical_name, tmp_uuid, ip_addr ":" (port+i-1), is_coord == 1? "T" : "F");
+        print(logical_name, tmp_uuid, ip_addr ":" (bind_port+i-1), is_coord == 1? "T" : "F");
         if(is_coord == 1)
             is_coord=0;
     }
