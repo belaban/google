@@ -21,7 +21,8 @@ for (( i=1; i<= ${num_nodes}; i++ )) ; {
     uuid=$((${instance_id} * ${num_nodes} - ${num_nodes} + ${i}))
     tmp_port=$((${bind_port} + ${i} -1))
     # echo "machine=${machine}: node: ${node_name} uuid: ${uuid} port=${tmp_port}"
-    cmd="nohup uperf.sh -props ${props} -name ${node_name} -uuid ${uuid} -port ${tmp_port} -nohup > /dev/null 2> /dev/null < /dev/null &"
+    out=/tmp/${node_name}.log
+    cmd="nohup uperf.sh -props ${props} -name ${node_name} -uuid ${uuid} -port ${tmp_port} -nohup > ${out} 2> ${out} < /dev/null &"
     command="${command} ${cmd}"
 }
 
