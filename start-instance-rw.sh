@@ -1,3 +1,3 @@
 
 #!/bin/bash
-gcutil addinstance --disk=jgroups-disk,mode=rw --image=jgroups2 $*
+gcutil addinstance --disk=jgroups-disk,mode=rw --image=jgroups3 $*
